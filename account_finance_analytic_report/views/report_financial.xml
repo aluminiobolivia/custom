@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_financial_analytic" inherit_id="account.report_financial">
+
+        <xpath expr="//t/t/t/div/div/div[1]" position="after">
+            <t t-if="data['analytic_codes'] != []">
+                <div class="col-xs-4">
+                    <strong>Analytic Accounts:</strong>
+                    <p t-esc="', '.join([ lt or '' for lt in data['analytic_codes'] ])"/>
+                </div>
+            </t>
+        </xpath>
+        
+
+    </template>
+</odoo>
+
